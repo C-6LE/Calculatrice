@@ -9,4 +9,4 @@ def modulo(number_1: int | float, number_2: int | float) -> int | float:
     [Return]
     - return: le reste de la division de number_1 par number_2
     """
-    return number_1 - number_2 * (number_1 // number_2)
+    return number_1 % number_2
