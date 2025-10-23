@@ -5,16 +5,28 @@ from fonctions_ope.division import division
 from fonctions_ope.puissance import puissance
 from fonctions_ope.modulo import modulo
 
-def demander_nombres():
+def demander_nombres() -> tuple[float, float]:
+
+    """
+    Fonction qui demande a l'utilisateur de rentrer des nombres.
+
+    [Return]
+    - return number_1 et number_2
+    """
+
     while True:
+
         try: 
-            number_1 = int(input("Veuillez entrer votre premier nombre. \n"))
-            number_2 = int(input("Veuillez entrer votre deuxieme nombre. \n"))
+            number_1 = float(input("Veuillez entrer votre premier nombre. \n"))
+            number_2 = float(input("Veuillez entrer votre deuxieme nombre. \n"))
             return number_1, number_2
         except ValueError:
             print("Entrée invalide")
 
 def afficher_menu():
+    """
+    Fonction affichant un menu semblable a une calculatrice
+    """
     print("=== Calculatrice ===")
     print("1 - Addition")
     print("2 - Soustraction")
@@ -24,12 +36,16 @@ def afficher_menu():
     print("6 - Modulo")
     print("7 - Quitter")
 
+#Boucle qui permet de rejouer en boucle le calcul d'un type d'opération
 while True:
+
     afficher_menu()
+
     try:
         choice = int(input("Veuillez choisir votre opération.\n"))
     except ValueError:
             print("Entrée invalide")
+
     match choice: 
         case 1:
             number_1, number_2 = demander_nombres()
