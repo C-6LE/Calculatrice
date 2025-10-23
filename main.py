@@ -15,6 +15,7 @@ print("6 - Modulo")
 
 choice = int(input("Veuillez choisir votre opération.\n"))
 
+#match-case qui permet à l'utilisateur de choisir le type d'opération qu'il souhaite utiliser.
 match choice: 
     case 1:
         number_1 = int(input("Veuillez entrer votre premier nombre. \n"))
