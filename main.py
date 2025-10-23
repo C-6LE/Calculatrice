@@ -22,6 +22,7 @@ def demander_nombres() -> tuple[float, float]:
             return number_1, number_2
         except ValueError:
             print("Entrée invalide")
+            continue
 
 def afficher_menu():
     """
