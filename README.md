@@ -23,8 +23,8 @@ La calculatrice propose 8 opérations mathématiques :
 
 1. Clonez ce dépôt :
 ```bash
-git clone https://github.com/votre-repo/calculatrice-python.git
-cd calculatrice-python
+git clone https://github.com/C-6LE/Calculatrice.git
+cd Calculatrice
 ```
 
 2. Assurez-vous d'avoir Python 3.10+ installé :
