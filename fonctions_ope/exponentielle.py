@@ -1,7 +1,7 @@
 # fonctions_ope/exponentielle.py
 import math
 
-def exponentielle(nombre: float) -> float:
+def exponentielle(number_1: float) -> float:
     """
     Calcule l'exponentielle e^x d'un nombre donné.
     
@@ -11,4 +11,4 @@ def exponentielle(nombre: float) -> float:
     [Return]
     - float : e^x
     """
-    return math.exp(nombre)
+    return math.exp(number_1)
