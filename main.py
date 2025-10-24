@@ -4,6 +4,7 @@ from fonctions_ope.multiplication import multiplication
 from fonctions_ope.division import division
 from fonctions_ope.puissance import puissance
 from fonctions_ope.modulo import modulo
+from fonctions_ope.racine_carree import racine_carree
 
 def demander_nombres(text: str) -> float:
 
@@ -35,7 +36,8 @@ def afficher_menu():
     print("4 - Division")
     print("5 - Puissance")
     print("6 - Modulo")
-    print("7 - Quitter")
+    print("7 - Racine carrée")
+    print("8 - Quitter")
 
 resultat_precedent = None
 
@@ -49,16 +51,23 @@ while True:
     except ValueError:
             print("Entrée invalide")
 
-    if resultat_precedent is not None:
+    if choice == 7:
+            number_1 = demander_nombres("Veuillez entrer votre nombre \n")
+           
+
+    elif resultat_precedent is not None:
         print(f"\n resultat actuel : {resultat_precedent}")
         utiliser = input(f"Souhaitez-vous utilisez {resultat_precedent} comme premier nombre ? (o / n)\n").lower()
         if utiliser == "o":
             number_1 = resultat_precedent
         else:
             number_1 = demander_nombres("Veuillez entrer votre premier nombre \n")
+       
     else:
         number_1 = demander_nombres("Veuillez entrer votre premier nombre \n")
-    number_2 = demander_nombres("Veuillez entrer votre deuxieme nombre \n")
+    if choice != 7:
+        number_2 = demander_nombres("Veuillez entrer votre deuxieme nombre \n")
+
 
     match choice: 
         case 1:
@@ -80,5 +89,8 @@ while True:
             resultat_precedent = modulo(number_1, number_2)
             print(f"{number_1} % {number_2} = {resultat_precedent}")
         case 7:
+            resultat_precedent = racine_carree(number_1)
+            print (f" √{number_1} = {resultat_precedent}")
+        case 8:
             print("Fin de programme")
             break
