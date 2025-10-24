@@ -69,7 +69,7 @@ while True:
             break
     else:
         number_1 = demander_nombres("Veuillez entrer votre premier nombre \n")
-    if choice != (7, 8):
+    if choice != 7 and choice != 8:
         number_2 = demander_nombres("Veuillez entrer votre deuxieme nombre \n")
 
 
