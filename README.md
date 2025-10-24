@@ -8,7 +8,7 @@ Ce projet est une calculatrice en Python développée dans le cadre d'un apprent
 
 ## ✨ Fonctionnalités
 
-La calculatrice propose 6 opérations mathématiques :
+La calculatrice propose 8 opérations mathématiques :
 
 - ➕ **Addition** : Additionner deux nombres
 - ➖ **Soustraction** : Soustraire deux nombres
