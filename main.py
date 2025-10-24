@@ -43,11 +43,12 @@ def afficher_menu():
 
 resultat_precedent = None
 
-#Boucle qui permet de rejouer en boucle le calcul d'un type d'opération
+#Boucle qui permet de rejouer en boucle le calcul d'un type d'opération.
 while True:
 
     afficher_menu()
 
+    # Demande du choix d'opération.
     try:
         choice = int(input("Veuillez choisir votre opération.\n"))
     except ValueError:
@@ -57,12 +58,15 @@ while True:
         print("Fin de programme")
         break
 
+    #Cas particulier -> racine carrée : cette opération ne demande qu'un seul nombre.
     if choice == 7:
-        number_1 = demander_nombres("Veuillez entrer votre nombre \n")      
-
+            number_1 = demander_nombres("Veuillez entrer votre nombre \n")   
+               
+    #Gestion du résultat précédent : si un résultat existe déjà, l'utilisateur peut le réutiliser, l'effacer ou quitter le programme.
     elif resultat_precedent is not None:
         print(f"\n resultat actuel : {resultat_precedent}")
         utiliser = int(input(f"Que souhaitez faire? \n 1 - Continuer avec ce résultat. \n 2 - Effacer la mémoire. \n 3 - Quitter."))
+
         if utiliser == 1 :
             number_1 = resultat_precedent
         elif utiliser == 2:
@@ -71,12 +75,15 @@ while True:
         elif utiliser ==3:
             print("Fin de programme")
             break
+
+    #Si aucun résultat précédent, on demande le premier nombre.
     else:
         number_1 = demander_nombres("Veuillez entrer votre premier nombre \n")
-    if choice != 7 and choice != 8:
+
+    if choice != 7 and choice != 8: # deuxième nombre (si nécessaire)
         number_2 = demander_nombres("Veuillez entrer votre deuxieme nombre \n")
 
-
+    #Exécution de l’opération choisie.
     match choice: 
         case 1:
             resultat_precedent = addition(number_1, number_2)
