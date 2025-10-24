@@ -52,23 +52,25 @@ while True:
             print("Entrée invalide")
 
     if choice == 7:
-            number_1 = demander_nombres("Veuillez entrer votre nombre \n")
-           
+            number_1 = demander_nombres("Veuillez entrer votre nombre \n")      
 
     elif resultat_precedent is not None:
         print(f"\n resultat actuel : {resultat_precedent}")
-        utiliser = input(f"Souhaitez-vous utilisez {resultat_precedent} comme premier nombre ? (o / n)\n").lower()
-        if utiliser == "o":
+        utiliser = int(input(f"Que souhaitez faire? \n 1 - Continuer avec ce résultat. \n 2 - Effacer la mémoire. \n 3 - Quitter."))
+        if utiliser == 1 :
             number_1 = resultat_precedent
-        else:
+        elif utiliser == 2:
+            resultat_precedent = None
             number_1 = demander_nombres("Veuillez entrer votre premier nombre \n")
-       
+        elif utiliser ==3:
+            print("Fin de programme")
+            break
     else:
         number_1 = demander_nombres("Veuillez entrer votre premier nombre \n")
     if choice != 7:
-        number_2 = demander_nombres("Veuillez entrer votre deuxieme nombre \n")
-
-
+        number_2 = demander_nombres("Veuillez entrer votre deuxieme nombre \n") 
+   
+ 
     match choice: 
         case 1:
             resultat_precedent = addition(number_1, number_2)
