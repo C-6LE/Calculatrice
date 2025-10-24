@@ -5,6 +5,7 @@ from fonctions_ope.division import division
 from fonctions_ope.puissance import puissance
 from fonctions_ope.modulo import modulo
 from fonctions_ope.racine_carree import racine_carree
+from fonctions_ope.exponentielle import exponentielle
 
 def demander_nombres(text: str) -> float:
 
@@ -37,7 +38,8 @@ def afficher_menu():
     print("5 - Puissance")
     print("6 - Modulo")
     print("7 - Racine carrée")
-    print("8 - Quitter")
+    print("8 - Exponentielle (e^x)")  
+    print("9 - Quitter")
 
 resultat_precedent = None
 
@@ -67,10 +69,10 @@ while True:
             break
     else:
         number_1 = demander_nombres("Veuillez entrer votre premier nombre \n")
-    if choice != 7:
-        number_2 = demander_nombres("Veuillez entrer votre deuxieme nombre \n") 
-   
- 
+    if choice != (7, 8):
+        number_2 = demander_nombres("Veuillez entrer votre deuxieme nombre \n")
+
+
     match choice: 
         case 1:
             resultat_precedent = addition(number_1, number_2)
@@ -94,5 +96,8 @@ while True:
             resultat_precedent = racine_carree(number_1)
             print (f" √{number_1} = {resultat_precedent}")
         case 8:
+            resultat_precedent = exponentielle(number_1)
+            print(f"e^{number_1} = {resultat_precedent}")
+        case 9:
             print("Fin de programme")
             break
