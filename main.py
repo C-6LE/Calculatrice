@@ -53,8 +53,12 @@ while True:
     except ValueError:
             print("Entrée invalide")
 
+    if choice == 9:
+        print("Fin de programme")
+        break
+
     if choice == 7:
-            number_1 = demander_nombres("Veuillez entrer votre nombre \n")      
+        number_1 = demander_nombres("Veuillez entrer votre nombre \n")      
 
     elif resultat_precedent is not None:
         print(f"\n resultat actuel : {resultat_precedent}")
@@ -98,6 +102,3 @@ while True:
         case 8:
             resultat_precedent = exponentielle(number_1)
             print(f"e^{number_1} = {resultat_precedent}")
-        case 9:
-            print("Fin de programme")
-            break
