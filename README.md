@@ -40,7 +40,7 @@ python main.py
 ```
 
 Suivez les instructions à l'écran :
-1. Choisissez l'opération souhaitée (1-6)
+1. Choisissez l'opération souhaitée (1-9)
 2. Entrez le premier nombre
 3. Entrez le deuxième nombre
 4. Le résultat s'affiche automatiquement
